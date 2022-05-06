@@ -1,0 +1,505 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Manjari', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f6f9;
+}
+
+a, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header Styles */
+nav {
+    position:fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: 'Inter', sans-serif;
+    padding: 0 5%;
+    height: 65px;
+    background-color:white;
+}
+
+nav .logo {
+    position: relative;
+    float: left;
+    left: 40px;
+    width: 40%;
+    height: 120%;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Manjari', sans-serif;
+    color: #FF300A;  
+}
+
+nav .logo a{
+    text-decoration: none;
+    color: #FF300A
+}
+nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .links li{
+    list-style: none;
+}
+
+nav .links a{
+    display: block;
+    padding: 0.5em;
+    font-size: 16px;
+    color: #090E36;
+    text-decoration: none;
+}
+
+.iniciarsesion {
+    text-align: center;
+    position:static;
+    line-height: 25px;
+    width: 125px;
+    height: 40px;
+    left: 995px;
+    top: 52px;
+    background-color: rgba(9, 14, 54, 0.082);
+    border-radius: 30px;
+}
+
+.iniciarsesion:hover {
+    background-color: rgba(9, 14, 54, 0.05);
+    transition: var(--trans1,border-color .4s ease 0s,background-color .4s ease 0s)
+}
+
+.registrarse {
+    text-align:center;
+    line-height: 25px;
+    position:static;
+    width: 125px;
+    height: 40px;
+    left: 995px;
+    top: 52px;
+    color: beige;
+    background-color:rgba(9, 14, 54, 0.2);
+    border-radius: 30px;
+}
+
+.registrarse:hover {
+    background-color: rgba(9, 14, 54, 0.05);
+    transition: var(--trans1,border-color .4s ease 0s,background-color .4s ease 0s)
+}
+
+#nav-toggle {
+    position: absolute;
+    top: -100px;
+}
+
+nav .icon-burger{
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .icon-burger .line{
+    width: 30px;
+    height: 5px;
+    background-color: #FF300A;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out
+}
+
+@media screen and (max-width: 768px) {
+    nav .logo {
+        float: none;
+        width: auto;
+        justify-content: center;
+    }
+    nav .links {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color:rgba(9, 14, 54, 0.05);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
+    }
+
+    nav :checked ~ .links {
+        bottom: 0;
+    }
+
+    nav .icon-burger {
+        display: block;
+    }
+
+    nav :checked ~ .icon-burger .line:nth-child(1) {
+        transform: translateY(10px) rotate(225deg);
+    }
+
+    nav :checked ~ .icon-burger .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+
+    nav :checked ~ .icon-burger .line:nth-child(2) {
+        opacity: 0;
+    }
+}
+
+/* Body */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem 0;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.main-content {
+    border-radius: 10px;
+    width: 65%;
+}
+
+/* Estilos para el video */
+.intro__video {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 420px;
+}
+
+/* Seccion del perfil */
+.intro__profile {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 2rem;
+    padding: 3rem;
+    width: 100%;
+    background-color: white;
+}
+
+.col-1 {
+    text-align: center;
+}
+
+.intro__profile__img {
+    width: 100px;
+    border-radius: 50px;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.intro__profile__name {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.intro__profile__description {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-style: italic;
+    color: #9C9CAC;
+}
+
+.intro__profile__role {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #9C9CAC;
+}
+
+/* About section */
+.about {
+    padding: 3rem 5rem .5rem;
+    border-top: 1px solid #e5e8ed;;
+    background-color: white;
+}
+
+.about__title-1__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.about__title {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.about__member-since {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: #9C9CAC;
+}
+
+.about__text {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Kind of classes */
+.kind-of-classes {
+    padding: 3rem 5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: white;
+}
+
+.classes-title {
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+}
+
+.class {
+    padding: .5rem;
+    border-radius: 10px;
+    border: 1px solid #c4c4d5;
+    margin-bottom: 2rem;
+    background-color: white;
+}
+
+.class__link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.class__link:hover {
+    background-color: #f5f6f9;
+}
+
+.class__name {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #2b2b30;
+}
+
+.class__divider {
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    background-color: #9C9CAC;
+}
+
+.class__quantity {
+    font-size: 1.2rem;
+    color: #9C9CAC;
+} 
+
+.class__col-2 {
+    display: flex;
+    align-items: center;
+}
+
+.class__price {
+    font-size: 1.4rem;
+    border-radius: 50px;
+    color: white;
+    padding: 1rem;
+    background-color: #FF300A;
+}
+
+/* Inicio seccion opiniones */
+.opinions {
+    padding: 3rem 5rem;
+    margin-top: 3rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.opinions-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.opinion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    background-color: #f5f6f9;
+}
+
+.opinions h2 {
+    font-size: 2.3rem;
+    margin-bottom: 2rem
+}
+
+.student-info {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.student-info__img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.student-info__img img {
+    border-radius: 50%;
+}
+
+.student-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.student-info__name {
+    font-size: 1.2rem;
+    color: #4D4D4D;
+    margin-bottom: .3rem;
+}
+
+.student-info__classes {
+    font-size: 1.1rem;
+    color: #9C9CAC;
+}
+
+.opinion-card__text {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+    color:#4D4D4D;
+}
+
+.opinion-card__date {
+    font-size: 1.2rem;
+    color: #8C8C8C;
+}
+
+/* Aside */
+/* Booking section */
+.aside-content {
+    width: 33%;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.booking__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 70px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.booking__link:hover {
+    background-color: #f5f6f9;
+}
+
+.booking__link__title {
+    font-size: 1.2rem;
+    color: #313140;
+}
+
+.booking__link__price span {
+    color: black;
+}
+
+.booking__link__price h2 {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.btn {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1.4rem;
+    border-radius: 10px;
+    width: 100%;
+    border-style: none;
+}
+
+.booking__book-btn {
+    margin-bottom: 2rem;
+    color: white;
+    background-color: #FF300A;
+}
+
+.booking__book-btn:hover {
+    cursor: pointer;
+    background-color: #d13f09;
+}
+
+.line {
+    border-top: 1px solid #e5e8ed;
+    padding: 2rem 0 1rem;
+}
+
+.booking__contact-btn:hover {
+    cursor: pointer;
+    background-color: #d7d7d9;
+}
+
+/* Availability section */
+.availability {
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    background-color: white;
+}
+
+.availability__week {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+.calendar {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #e5e8ed;
+    ;
+}
+
